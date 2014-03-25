@@ -83,7 +83,6 @@ def update_info(ctx):
         with ctx.lcd("locale"):
             ctx.local("svn info")
             ctx.local("svn status")
-    management_cmd(ctx, 'migrate --list')
 
 
 @task
