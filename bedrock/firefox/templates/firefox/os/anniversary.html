@@ -1,0 +1,250 @@
+{# This Source Code Form is subject to the terms of the Mozilla Public
+ # License, v. 2.0. If a copy of the MPL was not distributed with this
+ # file, You can obtain one at http://mozilla.org/MPL/2.0/. #}
+
+{% extends "firefox/base-resp.html" %}
+
+{% block page_title_prefix %}{% endblock %}
+{% block page_title %}{{ _('Firefox OS Anniversary') }}{% endblock %}
+
+{% block body_id %}firefox-os-anniversary{% endblock %}
+{% block body_class %}firefox-os-anniversary{% endblock %}
+
+{% block site_header_nav %}{% endblock %}
+{% block site_header_logo %}{% endblock %}
+
+{% block site_css %}
+  {{ css('firefox_os_anniversary') }}
+{% endblock %}
+
+{% block content %}
+<main role="main" id="main-content" class="container pager pager-no-history">
+  <div id="close-wrapper">
+    <button type="button" id="close">{{ _('Close') }}</button>
+  </div>
+
+  <h1 id="page-header">
+    <i></i>
+    <span>{{ _('Firefox OS') }}</span>
+  </h1>
+
+  <div id="phone">
+    <ul>
+      <li>
+        <a href="#users">{{ _('Users') }}</a>
+      </li>
+      <li>
+        <a href="#services">{{ _('Services') }}</a>
+      </li>
+      <li>
+        <a href="#community">{{ _('Community') }}</a>
+      </li>
+      <li>
+        <a href="#apps">{{ _('Apps/Content') }}</a>
+      </li>
+      <li>
+        <a href="#marketplace">{{ _('Marketplace') }}</a>
+      </li>
+      <li>
+        <a href="#distribution">{{ _('Distribution') }}</a>
+      </li>
+      <li>
+        <a href="#developers">{{ _('Developers') }}</a>
+      </li>
+      <li>
+        <a href="#regions">{{ _('Regions') }}</a>
+      </li>
+      <li>
+        <a href="#payment">{{ _('Payment') }}</a>
+      </li>
+      <li>
+        <a href="#os">{{ _('OS') }}</a>
+      </li>
+      <li>
+        <a href="#chipsets">{{ _('Chipsets') }}</a>
+      </li>
+      <li>
+        <a href="#oems">{{ _('OEMs') }}</a>
+      </li>
+    </ul>
+  </div>
+
+  <article id="contents" class="pager-content">
+    <section id="intro" class="pager-page">
+      <div class="copy copy-wide">
+        <h2>Lorem ipsum dolor sit amet</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et purus
+          ut sapien auctor ultricies. Cras dictum felis vel turpis feugiat
+          aliquet. Pellentesque egestas mollis condimentum. Proin convallis
+          cursus risus at tincidunt.
+        </p>
+      </div>
+    </section>
+    <section id="users" class="pager-page">
+      <div class="copy">
+        <h2>{{ _('Users') }}</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et purus
+          ut sapien auctor ultricies. Cras dictum felis vel turpis feugiat
+          aliquet. Pellentesque egestas mollis condimentum. Proin convallis
+          cursus risus at tincidunt.
+        </p>
+      </div>
+      <div class="media"></div>
+    </section>
+    <section id="services" class="pager-page">
+      <div class="copy">
+        <h2>{{ _('Services') }}</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et purus
+          ut sapien auctor ultricies. Cras dictum felis vel turpis feugiat
+          aliquet. Pellentesque egestas mollis condimentum. Proin convallis
+          cursus risus at tincidunt.
+        </p>
+      </div>
+      <div class="media"></div>
+    </section>
+    <section id="community" class="pager-page">
+      <div class="copy">
+        <h2>{{ _('Community') }}</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et purus
+          ut sapien auctor ultricies. Cras dictum felis vel turpis feugiat
+          aliquet. Pellentesque egestas mollis condimentum. Proin convallis
+          cursus risus at tincidunt.
+        </p>
+      </div>
+      <div class="media"></div>
+    </section>
+    <section id="apps" class="pager-page">
+      <div class="copy">
+        <h2>{{ _('Apps / Content') }}</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et purus
+          ut sapien auctor ultricies. Cras dictum felis vel turpis feugiat
+          aliquet. Pellentesque egestas mollis condimentum. Proin convallis
+          cursus risus at tincidunt.
+        </p>
+      </div>
+      <div class="media"></div>
+    </section>
+    <section id="marketplace" class="pager-page">
+      <div class="copy">
+        <h2>{{ _('Marketplace') }}</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et purus
+          ut sapien auctor ultricies. Cras dictum felis vel turpis feugiat
+          aliquet. Pellentesque egestas mollis condimentum. Proin convallis
+          cursus risus at tincidunt.
+        </p>
+      </div>
+      <div class="media"></div>
+    </section>
+    <section id="distribution" class="pager-page">
+      <div class="copy">
+        <h2>{{ _('Distribution') }}</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et purus
+          ut sapien auctor ultricies. Cras dictum felis vel turpis feugiat
+          aliquet. Pellentesque egestas mollis condimentum. Proin convallis
+          cursus risus at tincidunt.
+        </p>
+      </div>
+      <div class="media"></div>
+    </section>
+    <section id="developers" class="pager-page">
+      <div class="copy">
+        <h2>{{ _('Developers') }}</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et purus
+          ut sapien auctor ultricies. Cras dictum felis vel turpis feugiat
+          aliquet. Pellentesque egestas mollis condimentum. Proin convallis
+          cursus risus at tincidunt.
+        </p>
+      </div>
+      <div class="media"></div>
+    </section>
+    <section id="regions" class="pager-page">
+      <div class="copy">
+        <h2>{{ _('Regions') }}</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et purus
+          ut sapien auctor ultricies. Cras dictum felis vel turpis feugiat
+          aliquet. Pellentesque egestas mollis condimentum. Proin convallis
+          cursus risus at tincidunt.
+        </p>
+      </div>
+      <div class="media"></div>
+    </section>
+    <section id="payment" class="pager-page">
+      <div class="copy">
+        <h2>{{ _('Payment') }}</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et purus
+          ut sapien auctor ultricies. Cras dictum felis vel turpis feugiat
+          aliquet. Pellentesque egestas mollis condimentum. Proin convallis
+          cursus risus at tincidunt.
+        </p>
+      </div>
+      <div class="media"></div>
+    </section>
+    <section id="os" class="pager-page">
+      <div class="copy">
+        <h2>{{ _('OS') }}</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et purus
+          ut sapien auctor ultricies. Cras dictum felis vel turpis feugiat
+          aliquet. Pellentesque egestas mollis condimentum. Proin convallis
+          cursus risus at tincidunt.
+        </p>
+      </div>
+      <div class="media"></div>
+    </section>
+    <section id="chipsets" class="pager-page">
+      <div class="copy">
+        <h2>{{ _('Chipsets') }}</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et purus
+          ut sapien auctor ultricies. Cras dictum felis vel turpis feugiat
+          aliquet. Pellentesque egestas mollis condimentum. Proin convallis
+          cursus risus at tincidunt.
+        </p>
+      </div>
+      <div class="media"></div>
+    </section>
+    <section id="oems" class="pager-page">
+      <div class="copy">
+        <h2>{{ _('OEMs') }}</h2>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et purus
+          ut sapien auctor ultricies. Cras dictum felis vel turpis feugiat
+          aliquet. Pellentesque egestas mollis condimentum. Proin convallis
+          cursus risus at tincidunt.
+        </p>
+      </div>
+      <div class="media"></div>
+    </section>
+  </article>
+</main>
+
+{% block email_form %}{% endblock %}
+
+{% endblock %}
+
+{% block js %}
+  {{ js('firefox_os_anniversary') }}
+{% endblock %}

@@ -1,0 +1,310 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import "../../sandstone/sandstone-resp.less";
+
+@font-face {
+    font-family: 'Fira';
+    src: url('/media/fonts/FiraSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira SemiBold';
+    src: url('/media/fonts/FiraSans-SemiBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Fira UltraLightItalic';
+    src: url('/media/fonts/FiraSans-UltraLightItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@textGrey: #4d4e53;
+
+/* {{{ Template overrides */
+
+html {
+    overflow: auto;
+}
+
+html, body {
+    min-width: @widthDesktop;
+}
+
+#outer-wrapper {
+    background: #fff url(/media/img/sandstone/grain.png) repeat;
+    background: url(/media/img/sandstone/grain.png) repeat 0 0,
+                #fff;
+}
+
+#wrapper {
+    width: auto;
+    padding-bottom: 0;
+    overflow: hidden;
+}
+
+#masthead {
+    width: @widthDesktop - (@gridGutterWidth * 2);
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -500px;
+    z-index: 15;
+}
+
+.container {
+    width: 940px;
+}
+
+#main-content {
+    position: relative;
+    padding-top: 80px;
+}
+
+#page-header {
+    .clearfix();
+    width: 301px;
+    height: 91px;
+
+    i {
+        display: block;
+        float: left;
+        width: 102px;
+        height: 91px;
+        background: url(/media/img/firefox/os/anniversary/fxos-logo.png) left top no-repeat;
+    }
+
+    span {
+        display: block;
+        float: left;
+        background: url(/media/img/firefox/os/anniversary/fxos-logo.png) -102px top no-repeat;
+        width: 199px;
+        height: 91px;
+        .image-replaced();
+        .transition(all 0.3s ease);
+    }
+
+    &.alt {
+        span {
+            background-position: -102px -91px;
+        }
+    }
+}
+
+#contents {
+    color: #fff;
+    font-size: 16px;
+
+    h2 {
+        font: 48px/1.1 'Fira UltraLightItalic';
+        text-shadow: none;
+        color: #fff;
+        margin-bottom: @baseLine;
+    }
+}
+
+#close {
+    .hidden;
+}
+
+.js {
+    #outer-wrapper {
+        background: #fff;
+    }
+
+    #wrapper {
+        position: relative;
+    }
+
+    .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    #bg-white {
+        background: #fff url(/media/img/sandstone/grain.png) repeat;
+        background: url(/media/img/sandstone/grain.png) repeat 0 0,
+                    #fff;
+        z-index: 1;
+    }
+
+    #bg-blue {
+        background: #0ea0db;
+        z-index: 2;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        .transition();
+
+        &.active {
+            -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+        }
+    }
+
+    #main-content {
+        position: relative;
+        min-height: 800px;
+        padding-top: 150px;
+        z-index: 3;
+
+        h1 {
+            position: relative;
+            margin-top: -10px;
+        }
+    }
+
+    #contents {
+        position: relative;
+        z-index: 1;
+        margin-left: 100px;
+        color: @textGrey;
+
+        section {
+            .clearfix();
+        }
+
+        .copy {
+            float: left;
+            width: 280px;
+            margin-right: @baseLine;
+            color: #fff;
+
+            h2 {
+                color: #fff;
+            }
+
+            &.copy-wide {
+                width: 360px;
+                color: @textGrey;
+
+                h2 {
+                    color: @textGrey;
+                }
+            }
+        }
+
+        .media {
+            float: left;
+            width: 540px;
+            height: 300px;
+            background: #484848;
+        }
+
+        p {
+            margin-left: 60px;
+        }
+    }
+
+    #close-wrapper {
+        .clearfix();
+    }
+
+    #close {
+        display: inline-block;
+        float: right;
+        height: 69px;
+        padding: 0 79px 0 0;
+        background: url(/media/img/firefox/os/anniversary/bg-close.png) right center no-repeat;
+        color: #fff;
+        font: 16px/1 'Fira', Sans-serif;
+        cursor: pointer;
+        border: 0;
+        opacity: 0;
+        .transition();
+
+        &.active {
+            opacity: 1;
+        }
+    }
+
+    #phone {
+        position: absolute;
+        z-index: 2;
+        top: 95px;
+        right: 0;
+        width: 447px;
+        height: 790px;
+        background: url(/media/img/firefox/os/anniversary/bg-phone.png) center center no-repeat;
+        .transition(all 0.5s ease-in-out);
+
+        &.offset {
+            -webkit-transform: translateX(500px);
+            transform: translateX(500px);
+
+            ul {
+                opacity: 0;
+            }
+        }
+
+        ul {
+            list-style-type: none;
+            width: 292px;
+            height: 450px;
+            margin: 166px 0 0 78px;
+            overflow: hidden;
+            .transition();
+        }
+
+        li {
+            float: left;
+            width: 84px;
+            height: 100px;
+            overflow: hidden;
+            margin: 0 @baseLine (@baseLine / 2) 0;
+
+            &:nth-child(3n+3) {
+                margin-right: 0;
+            }
+
+            a {
+                display: block;
+                color: #fff;
+                text-align: center;
+                font-size: 12px;
+                font-family: 'Fira SemiBold';
+                text-transform: uppercase;
+
+                &:before {
+                    display: block;
+                    margin: 0 auto 5px;
+                    content: '';
+                    width: 70px;
+                    height: 70px;
+                    background: #fff;
+                    border-radius: 50%;
+                    .transition();
+                }
+
+                &:hover {
+                    text-decoration: none;
+
+                    &:before {
+                        box-shadow: inset 0 0 0 10px rgba(14, 160, 219, 0.4);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/****************************************************************************/
+// @High resolution images for @retina-type displays
+// Desktop
+@media (-webkit-min-device-pixel-ratio: 1.5),
+       (                min-resolution: 1.5dppx),
+       (                min-resolution: 144dpi) {
+
+    .js {
+        #close {
+            background-image: url(/media/img/firefox/os/anniversary/bg-close-high-res.png);
+            background-size: 69px 69px;
+        }
+    }
+}

@@ -80,6 +80,7 @@ urlpatterns = patterns('',
 
     page('mwc', 'firefox/os/mwc-2014-preview.html'),
     page('firefox/os/devices', 'firefox/os/devices.html'),
+    page('firefox/os/anniversary', 'firefox/os/anniversary.html'),
 
     url(releasenotes_re, views.release_notes, name='firefox.releasenotes'),
     url(mobile_releasenotes_re, views.release_notes,

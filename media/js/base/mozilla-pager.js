@@ -643,6 +643,19 @@ Mozilla.Pager.prototype.addPage = function(page) {
 };
 
 // }}}
+// {{{ findPageById()
+
+Mozilla.Pager.prototype.findPageById = function(pageId) {
+    'use strict';
+
+    var page = $.grep(this.pages, function(page) {
+        return page.id === pageId;
+    });
+
+    return page.length > 0 ? page[0] : null;
+};
+
+// }}}
 // {{{ update()
 
 Mozilla.Pager.prototype.update = function() {

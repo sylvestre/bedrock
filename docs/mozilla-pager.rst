@@ -197,6 +197,27 @@ All pagers have a ``pages`` array containing ``Mozilla.Page`` objects::
         console.log(my_pager_pages[i]);
     }
 
+You can also access a page by its id using the ``findPageById()`` function. Returns a ``Mozilla.Page`` object on success, ``null`` on failure::
+
+    <div class="pager" id="delayed-pager">
+        <div class="pager-content">
+            <div class="pager-page" id="team">
+                <p>Team copy...</p>
+            </div>
+            <div class="pager-page" id="process">
+                <p>Process copy...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var my_pager = new Mozilla.Pager(document.querySelector('#my-pager'));
+
+        var info_page = my_pager.findPageById('process');
+
+        console.log(info_page);
+    </script>
+
 Changing pages
 ^^^^^^^^^^^^^^^^^^^^^^
 

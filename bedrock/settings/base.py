@@ -243,6 +243,9 @@ MINIFY_BUNDLES = {
         'firefox_os_ie': (
             'css/firefox/os/firefox-os-ie.less',
         ),
+        'firefox_os_anniversary': (
+            'css/firefox/os/anniversary.less',
+        ),
         'firefox_os_devices': (
             'css/libs/tipsy.css',
             'css/base/mozilla-modal.less',
@@ -546,6 +549,10 @@ MINIFY_BUNDLES = {
         ),
         'firefox_os_ie9': (
             'js/libs/matchMedia.addListener.js',
+        ),
+        'firefox_os_anniversary': (
+            'js/base/mozilla-pager.js',
+            'js/firefox/os/anniversary.js',
         ),
         'firefox_os_devices': (
             'js/libs/jquery.tipsy.js',
