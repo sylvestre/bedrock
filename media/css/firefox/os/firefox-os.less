@@ -146,6 +146,56 @@ html, body {
   }
 }
 
+#lang-panel-container {
+    display: none;
+    position: relative;
+    float: left;
+    width: 44px;
+    height: 44px;
+    margin: 25px 0 0 @gridGutterWidth;
+}
+
+#lang-panel {
+    display: none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 200px;
+    padding: @baseLine / 2;
+    background: #fff;
+    border-radius: 4px;
+    opacity: 0;
+    .transition(opacity .3s ease-in-out);
+
+    &.visible {
+        opacity: 1;
+        .transition(opacity .3s ease-in-out);
+    }
+
+    p {
+        font-size: 14px;
+        &:focus {
+            outline: none;
+        }
+    }
+
+    #lang-panel-options {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        li {
+            display: inline-block;
+            margin: 0;
+            padding: 0 (@gridGutterWidth / 2);
+            border-right: 1px dotted #000;
+
+            &.last {
+                border: none;
+            }
+        }
+    }
+}
+
 h2 {
   font-size: 48px;
   letter-spacing: -2px;
@@ -1402,6 +1452,7 @@ html[lang="en-US"].js {
     z-index: 10;
     display: block;
     left: 370px;
+    -webkit-backface-visibility: hidden;
   }
   #adapt-feature-sprite-blue-line {
     top: 164px;

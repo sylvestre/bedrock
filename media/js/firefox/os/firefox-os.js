@@ -13,6 +13,13 @@
 
     var COUNTRY_CODE = '';
 
+    var $document = $(document);
+    var $window = $(window);
+    var $langContainer = $('#lang-panel-container');
+    var $langButton = $langContainer.find('button');
+    var $langPanel = $('#lang-panel');
+    var langTimer;
+
     /*
     * Set page specific content relating to geo for partner data etc
     */
@@ -29,6 +36,8 @@
                 }
             });
         }
+
+        initLangContentSelector();
 
         // if there are partners available, update UI
         if (partners_available.length > 0) {
@@ -66,6 +75,52 @@
             $('#primary-cta-signup').fadeIn();
             $('#primary-cta-phone').addClass('visibility', 'hidden');
             $('#secondary-cta-signup').css('display', 'inline-block');
+        }
+    }
+
+    /*
+     * Init language content selector
+     * Only applicable to en-US visitors in India
+     */
+    function initLangContentSelector () {
+        //show the panel on init
+        $langContainer.fadeIn(function () {
+            toggleLangContentSelector();
+        });
+        $langButton.on('click', toggleLangContentSelector);
+    }
+
+    /*
+     * Toggle language content selector visibility
+     */
+    function toggleLangContentSelector () {
+
+        if ($langPanel.hasClass('visible')) {
+
+            $langPanel.removeClass('visible').hide();
+            $langButton.focus();
+
+            $document.off('click.lang-panel');
+            $window.off('scroll.lang-panel');
+        } else {
+
+            $langPanel.show();
+            clearTimeout(langTimer);
+            langTimer = setTimeout(function () {
+
+                $langPanel.addClass('visible');
+                $langPanel.find('p').focus();
+
+                // hide panel when clicking outside in document
+                $document.on('click.lang-panel', function (e) {
+                    if (!$(e.target).parents().is('#lang-content-panel')) {
+                        toggleLangContentSelector();
+                    }
+                });
+
+                // hide panel on scroll
+                $window.on('scroll.lang-panel', toggleLangContentSelector);
+            }, 50);
         }
     }
 

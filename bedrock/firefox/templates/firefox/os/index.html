@@ -39,6 +39,19 @@
               </ul>
             </nav>
         {% endblock %}
+        <div id="lang-panel-container">
+          <button type="button" aria-controls="lang-panel">
+            {{ _('Choose Language')}}
+          </button>
+          <div id="lang-panel">
+            <p tabindex="-1">{{ _('Hello, we noticed you are in India. Choose your language:')}}</p>
+            <ul id="lang-panel-options">
+              <li><a href="#en-IN">{{ _('English')}}</a></li>
+              <li><a href="/hi-IN/firefox/os">{{ _('Hindi')}}</a></li>
+              <li class="last"><a href="/ta/firefox/os">{{ _('Tamil')}}</a></li>
+            </ul>
+          </div>
+        </div>
         <div class="cta-button">
           <a id="secondary-cta-signup" href="#email-form-wrapper" class="button newsletter-signup-toggle">{{_('Sign me up')}}</a>
           <a id="secondary-cta-phone" href="#get-device" class="button-green">{{_('Get a phone')}}</a>
