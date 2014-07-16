@@ -220,8 +220,13 @@
           </li>
           <li>
             <a href="#maps" id="maps-link">
-              <div class="icon maps"></div>
-              <span>{{_('Maps')}}</span>
+              {% if request.locale == 'hi-IN' or request.locale == 'ta' %}
+                <div class="icon settings"></div>
+                <span>{{_('Dual SIM')}}</span>
+              {% else %}
+                <div class="icon maps"></div>
+                <span>{{_('Maps')}}</span>
+              {% endif %}
             </a>
           </li>
           <li>
@@ -303,14 +308,25 @@
 
     <div class="item-wrapper hia-anchor" id="maps">
       <section class="item">
-        <div class="content left wide">
-          <h2>{{_('Moments in between')}}</h2>
-          <p>{{_('Get to where you’re going with directions, traffic and local transit information.')}}</p>
-          <ul class="icon-list">
-            <li class="icon maps"></li>
-          </ul>
-        </div>
-        <img class="app right" id="maps-app" src="{{ l10n_img('firefox/os/have-it-all/maps.jpg') }}?2013-09" alt="{{_('Maps app')}}">
+        {% if request.locale == 'hi-IN' or request.locale == 'ta' %}
+          <div class="content left wide">
+            <h2>{{_('Moments of choice')}}</h2>
+            <p>{{_('Take full control of your calling and messaging with dual SIM functionality.')}}</p>
+            <ul class="icon-list">
+              <li class="icon settings"></li>
+            </ul>
+          </div>
+          <img class="app right" id="maps-app" src="{{ l10n_img('firefox/os/have-it-all/maps.jpg') }}?2013-09" alt="{{_('Maps app')}}">
+        {% else %}
+          <div class="content left wide">
+            <h2>{{_('Moments in between')}}</h2>
+            <p>{{_('Get to where you’re going with directions, traffic and local transit information.')}}</p>
+            <ul class="icon-list">
+              <li class="icon maps"></li>
+            </ul>
+          </div>
+          <img class="app right" id="maps-app" src="{{ l10n_img('firefox/os/have-it-all/maps.jpg') }}?2013-09" alt="{{_('Maps app')}}">
+        {% endif %}
       </section>
     </div>
 
